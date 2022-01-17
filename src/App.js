@@ -12,14 +12,13 @@ function App() {
         <a
           className="App-link"
           href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_blank"//開新視窗
+          rel="noopener noreferrer"//讓當前瀏覽頁面不受影響
         >
-          Learn React
+         Hello world!
         </a>
       </header>
     </div>
   );
 }
-
 export default App;
