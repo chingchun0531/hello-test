@@ -45,23 +45,25 @@
   }
 }
 .homebtn {
-  width: 80px;
-  height: 30px;
+  width: 85px;
+  height: 40px;
   margin-bottom: 10px;
   margin-top: 10px;
+  font-size: 15px;
 }
 .page{
-  background-color: #c4c4c4;
+  background-color: #5c5c5c;
   width: 100%;
   padding: 1rem;/*rem:相對單位*/
   font-family: 'Satisfy', cursive;
 }
 .headTitle {
   font-size: 40px;
+  color: white;
 
 }
 .navmenu {
-  background-color:#c6e3a8;
+  background-color:#282c34;
   position: sticky;/*鎖在最上面*/
   top: 0;
   display: flex;
@@ -81,15 +83,14 @@
 }
 .item{
   padding: 0.5rem 0.75rem;
-  color: black;
+  color: #9fd9ff;
   text-decoration: none;
   transition: all 0.25s ease;/*動畫漸顯示*/
-  font-family: 'Caveat', cursive;
   font-size: 1.5rem;
   display: inline-block;
 }
 .item:hover, .dropdown-list:hover{
-  background-color: rgb(54, 100, 50);
+  background-color: rgb(45, 67, 141);
   color: white;
 }
 .dropdown {
@@ -98,10 +99,9 @@
 }
 .dropdown-list{
   padding: 0.5rem 0.75rem;
-  color: black;
+  color: #9fd9ff;
   text-decoration: none;
   transition: all 0.25s ease;/*動畫漸顯示*/
-  font-family: 'Caveat', cursive;
   font-size: 1.5rem;
   display: inline-block;
   border: none;
@@ -113,7 +113,7 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 120px;
+  min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);/*陰影*/
   z-index: 1;
 }
@@ -124,7 +124,6 @@
   text-decoration: none;
   display: block;
   text-align: left;
-  font-family: 'Caveat',cursive;
   font-size: 1.25rem;
   transition: all 0.25s ease;
 }
@@ -136,15 +135,13 @@
   display: block;
 }
 .search {
-  font-family: 'Caveat', cursive;
-  font-size: 1.2rem;
-  width: 150px;
+  font-size: 15px;
+  width: 160px;
   height: 30px;
   display: inline-block;
 }
 .searchbtn {
-  font-family: 'Caveat', cursive;
-  font-size: 1.2rem;
+  font-size: 15px;
   width: 60px;
   height: 30px;
   display: inline-block;
@@ -171,9 +168,10 @@ main{
 }
 footer {
   text-align: center;
-  background-color: #c6e3a8;
+  background-color: #282c34;
   padding: 0.5rem;
   font-family: 'Satisfy',cursive;
+  color: white;
 }
 .in {
   padding: 10px 20px;

@@ -26,7 +26,7 @@ function Navbar(props){
                     </div>
                     <div className="rightb">
                         <Link className="item" to="/">LogOut</Link>
-                        <Link className="item" to="/">SignUp</Link>
+                        <Link className="item" to="/SignUp">SignUp</Link>
                         <input className="search" type="text" placeholder="search..."></input>
                         <button className="searchbtn" type="submit">Search</button>
                     </div>
