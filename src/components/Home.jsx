@@ -1,33 +1,32 @@
 import React,{ useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '/Users/veronica.lin/reactJS/hello-test/src/logo.svg';
 import '/Users/veronica.lin/reactJS/hello-test/src/App.css';
 import axios from "axios";
 
 function Home(){
-  const [userid,setuserid] = useState("");
-  const [password, setpassword] = useState("");
-  const login = (event) =>{
-    event.preventDefault();//阻止發生默認行為
-    if(userid!=="" && password!==""){
+  const [user_name,setuser_name] = useState("");
+  const [user_password, setuser_password] = useState("");
+  let navigate = useNavigate();
+  const login = (e) =>{
+    e.preventDefault();//阻止發生默認行為
+    if(user_name!=="" && user_password!==""){
       axios
-      .post("http://localhost:3000/",{
-        userid:userid,
-        password:password,
+      .post("http://localhost:5000/",{
+        user_name:user_name,
+        user_password:user_password,
       })
       .then((res)=>{
         alert("Log in Success!");
-        Navigate("/About");
+        navigate("/About");
       })
       .catch((e)=>{
-        if(e.response.error){
-          alert("Wrong Userid or Password!");
-        }
+          alert("Wrong userid or password!");
       });
-    }else if(userid === ""){
-      alert("Enter Userid.");
+    }else if(user_name === ""){
+      alert("Enter Username.");
     }else{
-      alert("Enter Password.");
+      alert("Enter Your Password.");
     }
   };
     return(
@@ -36,17 +35,17 @@ function Home(){
         <h1>Hello World</h1>
         <h2>Log In</h2>
           <img src={logo} className="App-logo" alt="logo" />
-          <label>UserId</label>
-          <input className="in" type="text" placeholder="Enter your userid..." defaultValue={userid} value={userid} onChange={(e)=>{setuserid(e.target.value)}}/>
-          <label>PassWord</label>
-          <input className="in" type="text" placeholder="Enter your password..." defaultValue={password} value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
-          <nav>
-                <Link className="App-link" to="/About">About</Link>
-            </nav> 
+          <form onSubmit={login} action='/' method='POST'>
+          <label className="tit">UserName</label><br/>
+          <input className="in" type="text" placeholder="Enter your username..." value={user_name} onChange={(e)=>{setuser_name(e.target.value)}}/><br/>
+          <label className="tit">PassWord</label><br/>
+          <input className="in" type="password" placeholder="Enter your password..." value={user_password} onChange={(e)=>{setuser_password(e.target.value)}}/><br/>
           <button className="homebtn" type="submit">Log In</button>
-          <p>Not a member yet? Click here to <Link className="App-link" to="/SignUp">SignUp</Link></p>
+          <p style={{fontSize:"8px"}}>Not a member yet? Click here to <Link className="App-link" to="/SignUp">Sign up</Link></p>
+        </form>
         </header>
       </div>
     );
+
 }
 export default Home;
