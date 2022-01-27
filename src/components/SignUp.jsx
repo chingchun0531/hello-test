@@ -11,7 +11,6 @@ function SignUp(){
         const [user_birth, setuser_birth] = useState("");
         const [user_phone, setuser_phone] = useState("");
         const [user_sex, setuser_sex] = useState("");
-        //const [user_address, setuser_address] = useState("");
         const navigate = useNavigate();
         const signup=(e)=>{
           e.preventDefault();
@@ -23,8 +22,7 @@ function SignUp(){
               user_mail,
               user_birth,
               user_phone,
-              user_sex,
-              //user_address
+              user_sex
             })
             .then((res)=>{
               alert("Register Successfully!",user_name);
@@ -33,6 +31,8 @@ function SignUp(){
             .catch((error)=>{
               if(error.response){
                 alert("Username already exist. Please try another name.");
+              }else{
+                alert("Error.",error);
               }
             });
           }else if(user_name===""){

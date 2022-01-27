@@ -40,10 +40,10 @@ app.listen(port,() => {
     const {user_name,user_password,user_mail,user_birth,user_sex,user_phone} = req.body;
     console.log(`${user_name}`,`${user_password}`,`${user_mail}`,`${user_birth}`,`${user_sex}`,`${user_phone}`)
     db.query(
-      `INSERT INTO userdata(user_name,user_password,user_mail,user_birth,user_sex,user_phone) VALUES ('${user_name}','${user_password}','${user_mail}','${user_birth}','${user_sex}','${user_phone}')`,
+      `INSERT INTO userdata ('user_name','user_password','user_mail','user_birth','user_sex','user_phone') VALUES ('${user_name}','${user_password}','${user_mail}','${user_birth}','${user_sex}','${user_phone}')`,
       function(err, rows, fields){
-        if (err.code === "ER_DUP_ENTRY") {
-          return res.status(500).send({ error: "ACCOUNT_ALREADY_EXISTS" });
+        if (err.code === 'ER_DUP_ENTRY') {
+          return res.status(500).send({ error: 'ACCOUNT_ALREADY_EXISTS' });
         };
           return res.send({message: 'REGISTER_SUCCESSFULLY' });
       }
