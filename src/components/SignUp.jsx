@@ -57,7 +57,7 @@ function SignUp(){
           <label className="tit">Email</label><br/>
           <input className="in" type="email" placeholder="Email address..." value={user_mail} onChange={(e)=>{setuser_mail(e.target.value)}}/><br/>
           <label className="tit">Phone Number</label><br/>
-          <input className="in" type="tel" placeholder="Your phone number..." value={user_phone} onChange={(e)=>{setuser_phone(e.target.value)}}/><br/>
+          <input className="in" required="required" pattern="09\d{2}-\d{6}" type="tel" placeholder="Your phone number..." value={user_phone} onChange={(e)=>{setuser_phone(e.target.value)}}/><br/>
           <label className="tit">Sex</label><br/>
           <input type="radio" id="male" name="user_sex" value="Male" onChange={(e)=>{setuser_sex(e.target.value)}}/><label for="Male" style={{margin:"10px"}}>Male</label>
           <input type="radio" id="female" name="user_sex" value="Female" onChange={(e)=>{setuser_sex(e.target.value)}}/><label for="Female" style={{margin:"10px"}}>Female</label>

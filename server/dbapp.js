@@ -38,9 +38,9 @@ app.listen(port,() => {
 
   app.post("/SignUp", function(req, res) {
     const {user_name,user_password,user_mail,user_birth,user_sex,user_phone} = req.body;
-    console.log(`${user_name}`,`${user_password}`,`${user_mail}`,`${user_birth}`,`${user_sex}`,`${user_phone}`)
+    console.log(`${user_name}`,`${user_password}`,`${user_mail}`,`${user_birth}`,`${user_phone}`,`${user_sex}`)
     db.query(
-      `INSERT INTO userdata ('user_name','user_password','user_mail','user_birth','user_sex','user_phone') VALUES ('${user_name}','${user_password}','${user_mail}','${user_birth}','${user_sex}','${user_phone}')`,
+      `INSERT INTO userdata (user_name,user_password,user_mail,user_birth,user_phone,user_sex) VALUES ('${user_name}','${user_password}','${user_mail}','${user_birth}','${user_phone}','${user_sex}')`,
       function(err, rows, fields){
         if (err.code === 'ER_DUP_ENTRY') {
           return res.status(500).send({ error: 'ACCOUNT_ALREADY_EXISTS' });
