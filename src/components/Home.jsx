@@ -18,7 +18,7 @@ function Home(){
       })
       .then((res)=>{
         alert("Log in Success!");
-        navigate("/About");
+        navigate("/HomePage");
       })
       .catch((e)=>{
           alert("Wrong userid or password!");

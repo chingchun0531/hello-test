@@ -11,7 +11,7 @@ function Navbar(props){
             <div>
                 <div className="navmenu">
                     <div className="leftb">
-                        <Link className="item" to="/">Home</Link>
+                        <Link className="item" to="/HomePage">Home</Link>
                         <Link className="item" to="/About">About</Link>
                         <Link className="item" to="/Profile">Profile</Link>
 

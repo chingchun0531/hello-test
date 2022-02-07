@@ -8,12 +8,14 @@ import University from './components/University';
 import Junior from './components/Junior';
 import Senior from './components/Senior';
 import SignUp from './components/SignUp';
+import HomePage from './components/Homepage';
 
 const App=()=>{
   return(
       <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/HomePage" element={<HomePage />} />
         <Route path="/About" element={<About />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Junior" element={<Junior />}/>
