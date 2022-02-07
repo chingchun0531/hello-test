@@ -21,7 +21,7 @@ function HomePage(){
         </div> 
         </header>
         <Footer />
-        </div> 
+        </div>
         </>
     );
 }
